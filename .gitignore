@@ -1,0 +1,82 @@
+/.phpintel
+/phpintel
+/node_modules
+.phpintel
+/vendor
+/inc/config.php
+/videos
+/img
+/dist
+/dist/
+/test.html
+**/.DS_Store into
+
+#text editors
+*.esproj
+*.sublime-workspace
+*.tmlanguage.cache
+*.tmLanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+# project files should be checked into the repository, unless a significant
+# number of contributors will not be using SublimeText which
+# *.sublime-project
+
+# sftp configuration file(s)
+sftp-config.json
+
+# OSX
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+### Compass / SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
+*.css.map
+config.rb
+
+### Build tool files to exclude
+*codekit*
+
+### Node, Bower, etc. packages should be kept/maintained locally
+node_modules
+bower_components
+
+# ignores any hidden subversion files if previous vcs was SVN
+.svn
+
+### Server-side cache stuff
+.phpintel
+PDOErrors.txt
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+###Windows###
+# Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Shortcuts
+*.lnk

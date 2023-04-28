@@ -1,0 +1,6 @@
+{
+    "require": {
+        "perfitdev/sdkphp": "dev-master",
+        "phpmailer/phpmailer": "^6.3"
+    }
+}

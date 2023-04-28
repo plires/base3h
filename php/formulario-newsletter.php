@@ -13,10 +13,12 @@ function procesar_formulario_newsletter() {
 	$actual_url = explode("?", $url);
 	$origin = 'Ecommerce - ' . $actual_url[0];
 
+	$validRecaptcha = validarRecaptcha($_POST['g-recaptcha-response-newsletter']);
+
 	// Verificamos el campo
 	$checked_input = checkTheFormNewsletter($_POST, $actual_url[0]);
 
-	if ($checked_input) {
+	if ($checked_input && $validRecaptcha) {
 
 		/* Verificar si el email se encuentra en la tabla */
 		$email_not_found_in_database = searchEmailInBDD($wpdb, 'lc_newsletters', $_POST['email']);

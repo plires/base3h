@@ -13,8 +13,14 @@ function procesar_formulario_contacto() {
 	$actual_url = explode("?", $url);
 	$origin = 'Ecommerce - ' . $actual_url[0];
 
+	$validRecaptcha = validarRecaptcha($_POST['g-recaptcha-response']);
+
 	// Verificamos los inputs
 	$errors_contact = checkFormContact($_POST, $actual_url[0]);
+
+	if (! $validRecaptcha ) {
+		$errors_contact['recaptcha'] = 'Error de Recaptcha';
+	}
 
 	if (!$errors_contact) {
 

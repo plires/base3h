@@ -60,6 +60,8 @@
 
 				<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" class="needs-validation" novalidate>
 
+					<input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
 					<?php wp_nonce_field('graba_contacto', 'contacto_nonce'); ?>
 
 				  <div class="form-row row">

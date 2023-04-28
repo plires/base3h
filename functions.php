@@ -3,12 +3,43 @@
 	require_once __DIR__ . "/vendor/autoload.php";
 
 	// Requires
-  require_once('inc/config.php');
+  	require_once('inc/config.php');
 	require_once('inc/get_styles_and_js.php');
 	require_once('inc/functions-theme.php');
 	require_once('php/formulario-newsletter.php');
 	require_once('php/formulario-newsletter-pop-up.php');
 	require_once('php/formulario-contacto.php');
+
+	// Funcion para validar recaptcha
+	function validarRecaptcha($response) {
+	    $secret_key = RECAPTCHA_KEY_SECRET;
+	    $url = 'https://www.google.com/recaptcha/api/siteverify';
+
+	    $data = array(
+	        'secret' => $secret_key,
+	        'response' => $response
+	    );
+
+	    $options = array(
+	        'http' => array(
+	            'header' => "Content-type: application/x-www-form-urlencoded\r\n",
+	            'method' => 'POST',
+	            'content' => http_build_query($data)
+	        )
+	    );
+
+	    $context = stream_context_create($options);
+	    $result = file_get_contents($url, false, $context);
+
+	    if ($result === FALSE) {
+	        // Error al comunicarse con el servidor reCAPTCHA
+	        return false;
+	    }
+
+	    $result_data = json_decode($result, true);
+
+	    return $result_data['success'];
+	}
 
 	/**
 	 * Remove product data tabs

@@ -27,6 +27,7 @@
 			  </div>
 
 			  <input class="no_close" type="hidden" name="action" value="newsletter_pop_up">
+			  <input type="hidden" id="g-recaptcha-response-pop" name="g-recaptcha-response-pop">
 
 			  <button type="submit" class="btn btn-primary no_close transition">SUSCRIBIRME</button>
 

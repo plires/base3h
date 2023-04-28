@@ -33,6 +33,7 @@
 			  </div>
 
 			  <input type="hidden" name="action" value="newsletter">
+			  <input type="hidden" id="g-recaptcha-response-newsletter" name="g-recaptcha-response-newsletter">
 
 			  <button type="submit" class="btn btn-primary transition">Enviar</button>
 			</form>

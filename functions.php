@@ -107,11 +107,24 @@ function base3h_woocommerce_single_product_summary() {
 }; 
          
 // add the action 
-add_action( 'woocommerce_single_product_summary', 'base3h_woocommerce_single_product_summary', 10, 2 );
+// add_action( 'woocommerce_single_product_summary', 'base3h_woocommerce_single_product_summary', 10, 2 );
 
 /**
  * Remover posicion de la descripción original
  */ 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+// Remove add to cart button
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+remove_action( 'woocommerce_grouped_add_to_cart', 'woocommerce_grouped_add_to_cart', 30 );
+
+// Remove - Sale badge
+add_filter('woocommerce_sale_flash', '__return_false');
+
+// Optional - Remove prices
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
 
 ?>
